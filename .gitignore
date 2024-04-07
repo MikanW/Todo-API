@@ -34,3 +34,6 @@ build/
 
 ### macOS system file ###
 .DS_Store
+
+### DB User###
+application-secrets.properties
