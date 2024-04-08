@@ -49,6 +49,8 @@ public class ItemService {
 	 *
 	 */
 	public ItemAPI createNewItem(ItemAPI itemApi) {
+		//　TODO　登録内容妥当性チェック
+
 		//　リクエストからのAPI用アイテムをDB用へ変換
 		ItemDB itemDb = ItemObjConverter.APItoDB(itemApi);
 

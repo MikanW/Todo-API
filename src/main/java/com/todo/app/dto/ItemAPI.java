@@ -15,7 +15,7 @@ import java.util.Objects;
  * @since 2024-04-06
  */
 public class ItemAPI {
-	private int id;			// ID
+	private Integer id;			// ID
 	private String title;	// タイトル
 	private String detail;	// 詳細
 	private String due;		// 期限 yyyy-MM-dd
@@ -69,7 +69,7 @@ public class ItemAPI {
 	}
 
 	// getter and setters
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 

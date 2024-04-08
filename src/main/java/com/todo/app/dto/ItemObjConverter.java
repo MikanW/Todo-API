@@ -3,6 +3,8 @@ package com.todo.app.dto;
 import com.todo.app.entity.ItemDB;
 import com.todo.app.util.DateFormatter;
 
+import java.util.Map;
+
 
 /**
  * TodoアイテムのAPIに提供する形式・DB用形式の相互転換ライブラリー
@@ -63,4 +65,16 @@ public class ItemObjConverter {
 
 		return dbValue;
 	}
+
+	/**
+	 * TODO　API用よりをDB用を作成を作成時、妥当性チェック
+	 */
+/*	private boolean dataValid(Map<String, Object> props) {
+		error
+		// リクエストより指定不可属性
+		for (key : props.keySet()) {
+
+		}
+		return true;
+	}*/
 }
