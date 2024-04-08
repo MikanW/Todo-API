@@ -9,7 +9,8 @@
 
 ### 一括取得
 
-全todoアイテムを取得する。
+全todoアイテムを取得する
+
 - メソッド：GET
 - URL：http://localhost:8081/items/getAllItems
 - リクエストBODY：BODY不要
@@ -41,7 +42,9 @@
 }
 ```
 
-### 新規作成
+### 追加
+
+指定情報よりアイテムを新規作成し、追加する
 
 - メソッド：POST
 - URL：http://localhost:8081/items/createNewItem
@@ -83,6 +86,8 @@
 
 
 ### 更新
+
+指定アイテムを更新する。複数属性更新可。
 
 - メソッド：PATCH
 - URL：http://localhost:8081/items/updateItem
