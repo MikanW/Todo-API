@@ -88,7 +88,7 @@ public class TodoItemAPIs {
 		if ( !(updatedItem instanceof NullItemAPI)) {
 			// 更新ありの場合
 			response.put("updated", "true");
-			response.put("newItem", updatedItem);
+			response.put("updatedItem", updatedItem);
 
 			if ( failedPropList.isEmpty() ) {
 				// リクエスト指定の全属性が更新成功
@@ -111,9 +111,10 @@ public class TodoItemAPIs {
 	@PostMapping("deleteItem")
 	@Operation(summary = "指定IDに紐づくTodoアイテムを削除")
 	@ApiResponse(responseCode = "200", description = "アイテム削除成功")
-	public ResponseEntity<Map<String, Integer>> deleteItemById(@RequestBody Integer id) {
+	@ApiResponse(responseCode = "404", description = "指定IDのアイテム存在しない")
+	public ResponseEntity<Map<String, Object>> deleteItemById(@RequestBody Integer id) {
 		// リスポンス用
-		Map<String, Integer> response = new HashMap<>();
+		Map<String, Object> response = new HashMap<>();
 		HttpStatus statusCode;
 
 		//　アイテム削除処理
@@ -124,7 +125,7 @@ public class TodoItemAPIs {
 			statusCode = HttpStatus.OK;
 		} catch (ResourceNotFoundException e) {
 			// 指定ID存在しない場合
-			response.put(e.getMessage(), id);
+			response.put("errorMessage", e.getMessage());
 			statusCode = HttpStatus.NOT_FOUND;
 		}
 
