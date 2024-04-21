@@ -2,6 +2,7 @@ package com.todo.app.dto;
 
 import com.todo.app.util.DateFormatter;
 import com.todo.app.entity.ItemDB;
+import jakarta.validation.constraints.NotNull;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,6 +17,7 @@ import java.util.Objects;
  */
 public class ItemAPI {
 	private Integer id;			// ID
+	@NotNull(message = "タイトルは登録必須である")
 	private String title;	// タイトル
 	private String detail;	// 詳細
 	private String due;		// 期限 yyyy-MM-dd
@@ -34,6 +36,7 @@ public class ItemAPI {
 	 * デフォルト
 	 */
 	public ItemAPI() {
+		title = null;
 	}
 
 	/**
